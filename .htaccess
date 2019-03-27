@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule  ^(.*)$  /~henrik18001/WebFrameworks19/scoreboard/public/$1  [P,L] 
