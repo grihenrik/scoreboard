@@ -1,21 +1,27 @@
-/**
- * 
- * @param {*} element 
- * @param {*} url 
+/* 
+ * Function for getting data using ajax
  */
-var getContent=(element, url)=>{
-    
-    if (window.XMLHttpRequest){
-        ajax = new XMLHttpRequest();
-    }else{
-        // for old IE
-        ajax = new ActiveXObject('Microstoft.XMLHTTP');
+
+function getContent(element, url)
+{
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp = new XMLHttpRequest();
     }
-    ajax.onreadystatechange = ()=> {
-        if (ajax.readyState == 4 && ajax.status ==200){
-            element.innerHTML = ajax.responseText;
+    else
+    { // for old IE's
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+    
+    xmlhttp.onreadystatechange = function ()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            element.innerHTML = xmlhttp.responseText;
         }
     }
-    ajax.open ('GET', url, true);
-    ajax.send();
+    
+    xmlhttp.open('GET', url, true);
+    xmlhttp.send();
 }
+

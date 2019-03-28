@@ -13,5 +13,3 @@
 
 Route::get('/', 'BoardController@Board');
 Route::get('/test', 'BoardController@Test');
-Route::get('/admin','BoardController@Admin');
-Route::post('/action','BoardController@UpdateScores');
